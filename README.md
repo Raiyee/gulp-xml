@@ -2,7 +2,7 @@
 
 a gulp plugin to process xml file with [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js).
 
-The creation of this modules is due to that the module [gulp-xml2js](https://www.npmjs.com/package/gulp-xml2js) is not so powerful as the original *xml2js*.
+The creation of this modules is due to that the module [gulp-xml2js](https://www.npmjs.com/package/gulp-xml2js) is not so powerful as the original [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js).
 
 ---
 
