@@ -20,8 +20,12 @@ gulp.task('default', function () {
             },
             callback: function (result) {
                 return result.replace(/search/g, 'MySearch');
+                // throw Error('error');
             }
         }))
+        .on('error',function (e) {
+            console.log(e)
+        })
         .pipe(rename({
             basename: 'dist'
         }))

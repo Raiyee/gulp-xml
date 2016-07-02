@@ -1,6 +1,6 @@
 {
   "name": "gulp-xml",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a gulp plugin to process xml file with xml2js(node-xml2js)",
   "main": "index.js",
   "scripts": {

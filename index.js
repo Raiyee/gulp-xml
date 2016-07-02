@@ -29,14 +29,21 @@ module.exports = function (options) {
                 if (file.isBuffer()) {
                     return new xml2js.Parser(options.parserOpts)
                         .parseString(file.contents, function (err, result) {
-                            
+                            if (err) {
+                                return callback(err, file);
+                            }
+
                             result = options.outType
                                 ? new xml2js.Builder(options.buildOpts).buildObject(result) : JSON.stringify(result);
 
-                            options.callback && (result = options.callback(result) || result);
+                            try {
+                                options.callback && (result = options.callback(result) || result);
+                            } catch (err) {
+                                return callback(err, file);
+                            }
 
                             file.contents = new Buffer(result);
-                            
+
                             callback(null, file);
                         });
                 }
