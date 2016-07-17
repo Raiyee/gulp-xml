@@ -23,32 +23,27 @@ module.exports = function (options) {
             function process() {
                 if (file.isStream()) {
                     file.contents = file.contents.pipe(rs());
-                    return callback(null, file);
                 }
 
-                if (file.isBuffer()) {
-                    return new xml2js.Parser(options.parserOpts)
-                        .parseString(file.contents, function (err, result) {
-                            if (err) {
-                                return callback(err, file);
-                            }
+                if (!file.isBuffer()) return callback(null, file);
 
-                            result = options.outType
-                                ? new xml2js.Builder(options.buildOpts).buildObject(result) : JSON.stringify(result);
+                new xml2js.Parser(options.parserOpts)
+                    .parseString(file.contents, function (err, result) {
+                        if (err) return callback(err, file);
 
-                            try {
-                                options.callback && (result = options.callback(result) || result);
-                            } catch (err) {
-                                return callback(err, file);
-                            }
+                        result = options.outType
+                            ? new xml2js.Builder(options.buildOpts).buildObject(result) : JSON.stringify(result);
 
-                            file.contents = new Buffer(result);
+                        try {
+                            options.callback && (result = options.callback(result) || result);
+                        } catch (err) {
+                            return callback(err, file);
+                        }
 
-                            callback(null, file);
-                        });
-                }
+                        file.contents = new Buffer(result);
 
-                callback(null, file);
+                        callback(null, file);
+                    });
             }
 
             process();
