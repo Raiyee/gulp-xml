@@ -1,6 +1,6 @@
 {
   "name": "gulp-xml",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a gulp plugin to process xml file with xml2js(node-xml2js)",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "readable-stream": "^2.1.4",
-    "replacestream": "^4.0.1",
+    "replacestream": "^4.0.0",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
