@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "readable-stream": "^2.1.4",
-    "replacestream": "^4.0.0",
+    "replacestream": "^4.0.1",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
