@@ -1,5 +1,7 @@
 # gulp-xml
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JounQin/gulp-xml.svg)](https://greenkeeper.io/)
+
 [![dependencies](https://david-dm.org/JounQin/gulp-xml.svg)](https://david-dm.org/JounQin/gulp-xml)
 [![devDependency Status](https://david-dm.org/JounQin/gulp-xml/dev-status.svg)](https://david-dm.org/JounQin/gulp-xml#info=devDependencies)
 
