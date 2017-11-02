@@ -22,7 +22,7 @@ gulp.task('default', function () {
     gulp.src('./test/src.xml')
         .pipe(xml({
             // options to initialize an XML2JS PARSER
-            parseOpts: {
+            parserOpts: {
                 trim: true
             },
             // options to initialize an XML2JS BUILDER
